@@ -18,3 +18,12 @@ and start hacking!
 Click on this link to enroll
 https://classroom.github.com/a/LYAlBqE_
 This is going to give you a unique github repo which you should clone on the VM created above.
+
+## Step 3:
+TODO @fabio - how to to the hacking
+
+## Step 4:
+TODO @fabio - push your changes to submit your wonderful mods
+
+## Step 5:
+TODO @navjot - look at league table. @navjot to write benchmarking script.
