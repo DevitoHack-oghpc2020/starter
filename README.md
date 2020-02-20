@@ -1,4 +1,4 @@
-# Welcome to Devito OGHPC Devito-GPU hackathon
+# Welcome to the OGHPC Devito-GPU hackathon
 
 
 That's enough of the pleasantries. Let us get started.
