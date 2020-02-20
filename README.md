@@ -20,17 +20,13 @@ https://classroom.github.com/a/LYAlBqE_
 This is going to give you a unique github repo which you should clone on the VM created above.
 
 ## Step 3:
-Navigate to the `benchmarks` directory
-
-```
-cd $HACKATHON
-```
-
-Here you will find `run-preset.py`, a Python script to execute a selected set
-of benchmarks. Aspects like discretization and duration of the benchmark are
-fixed, so you won't care about them. The only argument that `run-preset.py`
-accepts is the name of the benchmark -- there are four alternatives, listed
-below by increasing order of generated-code complexity:
+In the repository that you have just cloned, you will find two Python files.
+One of these is `run-preset.py`, which allows you to execute a set of Devito
+benchmarks that we have pre-selected for this hackathon. Aspects like
+discretization and duration of the benchmark are fixed, so you won't care about
+them. The only argument that `run-preset.py` accepts is the name of the
+benchmark -- there are four alternatives, listed below by increasing order of
+generated-code complexity:
 
 * `python run-preset.py acoustic`: to generate and run an isotropic acoustic
   forward propagator.
@@ -42,19 +38,14 @@ below by increasing order of generated-code complexity:
   forward propagator.
 
 The first time you run the command, the code gets generated. Instructions will
-then be provided on screen explaining how to hack the generated code. Then, you
-will only need to re-run the same command to execute the same problem (with
-identical configuration and data) over the edited generated code. Performance
-metrics (e.g., completion time, GFlops/s performance) will be displayed by
-Devito on screen at the end of each run.
+be provided on screen explaining how to hack the generated code. Then, to test
+your hacking, just re-run the same command. Performance metrics (e.g.,
+completion time, GFlops/s performance) will be displayed by Devito on screen at
+the end of each run.
 
 ## Step 4:
-To submit your work at the end of the hackathon:
-
-* go to the repository that you cloned in step 2.
-* run `python push-files.py`
-
-and that's it!
+To submit your work at the end of the hackathon, just run `python
+push-files.py`.  And that's it!
 
 ## Step 5:
 TODO @navjot - look at league table. @navjot to write benchmarking script.
