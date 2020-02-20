@@ -19,7 +19,7 @@ Click on this link to enroll
 https://classroom.github.com/a/LYAlBqE_
 This is going to give you a unique github repo which you should clone on the VM created above.
 
-## Step 3:
+## Step 3: Start hacking!
 In the repository that you have just cloned, you will find two Python files.
 One of these is `run-preset.py`, which allows you to execute a set of Devito
 benchmarks that we have pre-selected for this hackathon. Aspects like
@@ -43,7 +43,7 @@ your hacking, just re-run the same command. Performance metrics (e.g.,
 completion time, GFlops/s performance) will be displayed by Devito on screen at
 the end of each run.
 
-## Step 4:
+## Step 4: Push your work
 To submit your work at the end of the hackathon, just run `python
 push-files.py`.  And that's it!
 
