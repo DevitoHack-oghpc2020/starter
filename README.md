@@ -16,7 +16,7 @@ and start hacking!
 
 ## Step 2: Enroll in the hackathon
 Click on this link to enroll
-https://classroom.github.com/a/LYAlBqE_
+[https://classroom.github.com/a/LYAlBqE_](https://classroom.github.com/a/LYAlBqE_)
 This is going to give you a unique github repo which you should clone on the VM created above.
 
 ## Step 3: Start hacking!
