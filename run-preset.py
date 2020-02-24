@@ -1,6 +1,7 @@
 import click
 
-from devito import configuration
+from devito import configuration, info, norm
+from devito.types.dense import DiscreteFunction
 
 from benchmarks.user.benchmark import run_jit_backdoor
 
@@ -28,7 +29,12 @@ def cli_run_jit_backdoor(problem, **kwargs):
     kwargs['block_shape'] = []
     kwargs['autotune'] = 'off'
 
-    run_jit_backdoor(problem, **kwargs)
+    retval = run_jit_backdoor(problem, **kwargs)
+
+    if retval is not None:
+        for i in retval:
+            if isinstance(i, DiscreteFunction):
+                info("norm(%s) = %f" % (i.name, norm(i)))
 
 
 if __name__ == "__main__":
