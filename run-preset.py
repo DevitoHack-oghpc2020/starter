@@ -18,13 +18,14 @@ def cli_run_jit_backdoor(problem, **kwargs):
     kwargs['time_order'] = [2]
     kwargs['nbl'] = 10
     kwargs['tn'] = 50  # End time of the simulation in ms
+    kwargs['spacing'] = (20.0, 20.0, 20.0)
 
     # Preset performance
     if problem == 'tti-agg':
         problem = 'tti'
-        kwargs['dle'] = 'aggressive'
+        kwargs['dse'] = 'aggressive'
     else:
-        kwargs['dle'] = 'advanced'
+        kwargs['dse'] = 'advanced'
 
     # Dummy values as they will be unused
     kwargs['block_shape'] = []
