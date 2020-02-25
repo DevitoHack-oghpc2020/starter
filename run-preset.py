@@ -13,14 +13,15 @@ def cli_run_jit_backdoor(problem, **kwargs):
     """`click` interface for the `run_jit_backdoor` mode in `benchmark.py`."""
 
     # Preset problem parameters, discretization, etc
-    kwargs['shape'] = (512, 512, 512)
+    kwargs['shape'] = (492, 492, 492)
     kwargs['space_order'] = [12]
     kwargs['time_order'] = [2]
     kwargs['nbl'] = 10
     kwargs['tn'] = 50  # End time of the simulation in ms
 
     # Preset performance
-    if 'problem' == 'tti-agg':
+    if problem == 'tti-agg':
+        problem = 'tti'
         kwargs['dle'] = 'aggressive'
     else:
         kwargs['dle'] = 'advanced'
