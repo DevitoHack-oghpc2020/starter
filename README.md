@@ -25,23 +25,27 @@ One of these is `run-preset.py`, which allows you to execute a set of Devito
 benchmarks that we have pre-selected for this hackathon. Aspects like
 discretization and duration of the benchmark are fixed, so you won't care about
 them. The only argument that `run-preset.py` accepts is the name of the
-benchmark -- there are four alternatives, listed below by increasing order of
-generated-code complexity:
+benchmark -- there are two alternatives:
 
 * `python run-preset.py acoustic`: to generate and run an isotropic acoustic
   forward propagator.
 * `python run-preset.py tti`: to generate and run an anisotropic (TTI) acoustic
   forward propagator.
-* `python run-preset.py tti-agg`: like above, but Devito will now optimize the
-  generated code to perform fewer FLOPs, in exchange for a larger working set.
-* `python run-preset.py viscoelastic`: to generate and run a visco-elastic
-  forward propagator.
 
-The first time you run the command, the code gets generated. Instructions will
-be provided on screen explaining how to hack the generated code. Then, to test
-your hacking, just re-run the same command. Performance metrics (e.g.,
-completion time, GFlops/s performance) will be displayed by Devito on screen at
-the end of each run.
+We suggest to start with the simplest one, `acoustic`.  The first time you run
+the command, the code gets generated. Instructions will be provided on screen
+explaining how to hack the generated code. Then, to test your hacking, just
+re-run the same command. The execution time will be displayed at the end of
+each run -- look for something along the lines of
+```
+Operator `Forward` run in 1.22 s
+```
+Where "Forward" is the name of the Operator. If interested in more performance
+metrics, such as the GFlops/s and GPoints/s performance, just run with the
+environment variable ``DEVITO_LOGGING=PERF``.
+
+Performance metrics (e.g., completion time, GFlops/s
+performance) will be displayed by Devito on screen at the end of each run.
 
 ## Step 4: Push your work
 To submit your work at the end of the hackathon, just run `python
@@ -49,9 +53,3 @@ push-files.py`.  And that's it!
 
 ## Step 5:
 TODO @navjot - look at league table. @navjot to write benchmarking script.
-
-## Notes
-
-* Devito can provide an estimate of the achieved performance (GFlops/s, GPoints/s,
-  ...) as well as a few other metrics. Just run with the environment variable
-  `DEVITO_LOGGING=DEBUG` to have these information emitted to stdout.
