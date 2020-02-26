@@ -23,7 +23,7 @@ def cli_run_jit_backdoor(problem, **kwargs):
         kwargs['shape'] = (350, 350, 350)
         kwargs['tn'] = 50  # End time of the simulation in ms
         kwargs['dse'] = 'aggressive'
-    if problem == 'acoustic':
+    elif problem == 'acoustic':
         kwargs['shape'] = (492, 492, 492)
         kwargs['tn'] = 100  # End time of the simulation in ms
         kwargs['dse'] = 'advanced'
