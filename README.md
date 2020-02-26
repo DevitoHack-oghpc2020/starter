@@ -49,3 +49,9 @@ push-files.py`.  And that's it!
 
 ## Step 5:
 TODO @navjot - look at league table. @navjot to write benchmarking script.
+
+## Notes
+
+* Devito can provide an estimate of the achieved performance (GFlops/s, GPoints/s,
+  ...) as well as a few other metrics. Just run with the environment variable
+  `DEVITO_LOGGING=DEBUG` to have these information emitted to stdout.
