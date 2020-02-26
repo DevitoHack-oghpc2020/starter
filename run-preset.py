@@ -8,24 +8,27 @@ from benchmarks.user.benchmark import run_jit_backdoor
 
 @click.command()
 @click.argument('problem',
-                type=click.Choice(['acoustic', 'tti', 'tti-agg', 'viscoelastic']))
+                type=click.Choice(['acoustic', 'tti']))
 def cli_run_jit_backdoor(problem, **kwargs):
     """`click` interface for the `run_jit_backdoor` mode in `benchmark.py`."""
 
-    # Preset problem parameters, discretization, etc
-    kwargs['shape'] = (492, 492, 492)
+    # Preset shared parameters
     kwargs['space_order'] = [12]
     kwargs['time_order'] = [2]
     kwargs['nbl'] = 10
-    kwargs['tn'] = 50  # End time of the simulation in ms
     kwargs['spacing'] = (20.0, 20.0, 20.0)
 
-    # Preset performance
-    if problem == 'tti-agg':
-        problem = 'tti'
+    # Preset problem-specific parameters
+    if problem == 'tti':
+        kwargs['shape'] = (350, 350, 350)
+        kwargs['tn'] = 50  # End time of the simulation in ms
         kwargs['dse'] = 'aggressive'
-    else:
+    if problem == 'acoustic':
+        kwargs['shape'] = (492, 492, 492)
+        kwargs['tn'] = 100  # End time of the simulation in ms
         kwargs['dse'] = 'advanced'
+    else:
+        assert False
 
     # Dummy values as they will be unused
     kwargs['block_shape'] = []
