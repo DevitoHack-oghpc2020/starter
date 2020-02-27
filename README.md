@@ -44,8 +44,20 @@ Where "Forward" is the name of the Operator. If interested in more performance
 metrics, such as the GFlops/s and GPoints/s performance, just run with the
 environment variable ``DEVITO_LOGGING=PERF``.
 
-Performance metrics (e.g., completion time, GFlops/s
-performance) will be displayed by Devito on screen at the end of each run.
+Note: we have configured the VM such that Devito, by default, generates and
+compiles code with OpenMP GPU-offloading pragmas. This is achieved through the
+following environment variables:
+
+```
+DEVITO_ARCH=clang
+DEVITO_PLATFORM=nvidiaX
+```
+
+If one wants to:
+
+* Use a different backend compiler, for example `pgcc`; then set `DEVITO_ARCH=pgcc`.
+* Generate sequential code, then unset `DEVITO_PLATFORM`
+
 
 ## Step 4: Push your work
 To submit your work at the end of the hackathon, just run `python
