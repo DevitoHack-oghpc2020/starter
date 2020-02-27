@@ -15,9 +15,7 @@ When your password is updated, click on the screen emoji at your VM and select
 and start hacking!
 
 ## Step 2: Enroll in the hackathon
-Click on this link to enroll
-[https://classroom.github.com/a/LYAlBqE_](https://classroom.github.com/a/LYAlBqE_)
-This is going to give you a unique github repo which you should clone on the VM created above.
+Simply fork this repo. All forks will be checked periodically.
 
 ## Step 3: Start hacking!
 In the repository that you have just cloned, you will find two Python files.
