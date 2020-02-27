@@ -23,10 +23,16 @@ def cli_run_jit_backdoor(problem, **kwargs):
         kwargs['shape'] = (350, 350, 350)
         kwargs['tn'] = 50  # End time of the simulation in ms
         kwargs['dse'] = 'aggressive'
+
+        # Reference norms for the output fields
+        reference = {'rec': 66.4171, 'u': 30.7077, 'v': 30.7077}
     elif problem == 'acoustic':
         kwargs['shape'] = (492, 492, 492)
         kwargs['tn'] = 100  # End time of the simulation in ms
         kwargs['dse'] = 'advanced'
+
+        # Reference norms for the output fields
+        reference = {'rec': 184.5264, 'u': 151.5458}
     else:
         assert False
 
@@ -39,7 +45,9 @@ def cli_run_jit_backdoor(problem, **kwargs):
     if retval is not None:
         for i in retval:
             if isinstance(i, DiscreteFunction):
-                info("norm(%s) = %f" % (i.name, norm(i)))
+                v = norm(i)
+                info("norm(%s) = %f (expected = %f, delta = %f)"
+                     % (i.name, v, reference[i.name], abs(v - reference[i.name])))
 
 
 if __name__ == "__main__":
