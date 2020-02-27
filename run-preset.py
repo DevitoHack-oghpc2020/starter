@@ -25,14 +25,14 @@ def cli_run_jit_backdoor(problem, **kwargs):
         kwargs['dse'] = 'aggressive'
 
         # Reference norms for the output fields
-        reference = {'rec': 66.4171, 'u': 30.7077, 'v': 30.7077}
+        reference = {'rec': 66.417102, 'u': 30.707737, 'v': 30.707728}
     elif problem == 'acoustic':
         kwargs['shape'] = (492, 492, 492)
         kwargs['tn'] = 100  # End time of the simulation in ms
         kwargs['dse'] = 'advanced'
 
         # Reference norms for the output fields
-        reference = {'rec': 184.5264, 'u': 151.5458}
+        reference = {'rec': 184.526400, 'u': 151.545837}
     else:
         assert False
 
