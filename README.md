@@ -1,7 +1,7 @@
 # Welcome to the OGHPC Devito-GPU hackathon
 
-
-That's enough of the pleasantries. Let us get started.
+Not able to make it to the OGHPC hackathon in person? No worries - we are a gloablly distributed dev team so everything is already set up to work online :-)
+At the top of our website, https://www.devitoproject.org/, you will see a link to our Slack workspace. Feel free to browse channels and ask questions - really the key channels for this hackathon are \#oghpc and \#gpu-dev. 
 
 ## Step 1: Get account and GPU enabled VM for development
 You need to click on this link:
@@ -62,4 +62,8 @@ To submit your work at the end of the hackathon, just run `python
 push-files.py`.  And that's it!
 
 ## Step 5:
-TODO @navjot - look at league table. @navjot to write benchmarking script.
+Periodically we will:
+* check all forks for updates
+  * checkout your updated code
+  * run the benchmarks on a dedicated V100
+  * update league table [will provide a link to the league table as soon as it is ready]
