@@ -95,4 +95,4 @@ Periodically we will:
 - We suggest that you always have a terminal running nvtop and/or htop. This can help not
 only to monitor the GPU usage of your VM but to quickly kill (SIGKILL) an application that is inefficient and
 save your time.
-- Feel free to call the members of our teams if you consider any clarifications or more detailed examplanation is needed,
+- Feel free to call the members of our team and ask for help if you consider any clarifications or more detailed explanation is needed.
