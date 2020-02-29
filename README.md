@@ -1,5 +1,11 @@
 # Welcome to the OGHPC Devito-GPU hackathon
 
+The objective is this hackathon is to use Devito's JIT backdoor to optimise the code automatically generated for:
+* OpenMP 5 offloading, or
+* OpenACC
+
+Code variants will be benchmarked, and the best performing strategies will be implemented in the Devito compiler. In this way, HPC/GPU developers can contribute to Devito development without having to learn how to develop the compiler itself.
+
 Not able to make it to the OGHPC hackathon in person? No worries - we are a gloablly distributed dev team so everything is already set up to work online :-)
 At the top of our website, https://www.devitoproject.org/, you will see a link to our Slack workspace. Feel free to browse channels and ask questions - really the key channels for this hackathon are \#oghpc and \#gpu-dev. 
 
