@@ -59,8 +59,23 @@ DEVITO_PLATFORM=nvidiaX
 
 If one wants to:
 
-* Use a different backend compiler, for example `pgcc`; then set `DEVITO_ARCH=pgcc`.
-* Generate sequential code, then unset `DEVITO_PLATFORM`
+* Use a different backend compiler, for example `pgcc`; then set `DEVITO_ARCH=pgcc` and unset `DEVITO_PLATFORM`
+
+# A running example with OpenACC
+```
+unset DEVITO_PLATFORM; DEVITO_ARCH=pgcc python run-preset.py acoustic
+
+vi/vim/nano etc.. /tmp/devito-jitcache-uid1000/......hash......c
+```
+Modify the code:
+```
+Add to the included header files: #include "openacc.h"
+Add to a loop or loops you consider parallelizable: #pragma acc kernels
+```
+then rerun:
+```
+unset DEVITO_PLATFORM; DEVITO_ARCH=pgcc python run-preset.py acoustic
+```
 
 
 ## Step 4: Push your work
@@ -73,3 +88,11 @@ Periodically we will:
   * checkout your updated code
   * run the benchmarks on a dedicated V100
   * update league table [will provide a link to the league table as soon as it is ready]
+
+
+## Tips and hints
+
+- We suggest that you always have a terminal running nvtop and/or htop. This can help not
+only to monitor the GPU usage of your VM but to quickly kill (SIGKILL) an application that is inefficient and
+save your time.
+- Feel free to call the members of our teams if you consider any clarifications or more detailed examplanation is needed,
