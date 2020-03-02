@@ -41,4 +41,4 @@ check_call(['git', 'add', 'edited-files/'])
 
 # git-commit and git-push staged files
 check_call(['git', 'commit', '-am', 'Push files edited with JIT-BACKDOOR'])
-check_call(['git', 'push'])
+check_call(['git', 'push', 'origin', 'master'])
