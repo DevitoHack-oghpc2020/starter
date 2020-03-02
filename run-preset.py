@@ -53,13 +53,8 @@ def cli_run_jit_backdoor(problem, **kwargs):
 
     # Record DEVITO_ environment
     env = [(k, v) for k, v in os.environ.items() if k.startswith('DEVITO_')]
-    content = """\
-#!/bin/bash
-
-%s
-"""
-    content = content % "\n".join('export %s=%s' % (k, v) for k, v in env)
-    with open('env.sh', 'w') as f:
+    content = "{%s}" % ", ".join("'%s': '%s'" % (k, v) for k, v in env)
+    with open('env.py', 'w') as f:
         f.write(content)
 
 

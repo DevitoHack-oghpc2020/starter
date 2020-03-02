@@ -26,12 +26,12 @@ for i in listdir(jitcachedir):
         print("Copied `%s` to `%s`" % (targetfile, targetdir))
 
 # git-add env file
-envfile = path.join(repodir, 'env.sh')
+envfile = path.join(repodir, 'env.py')
 if not path.exists(envfile):
-    raise ValueError("Cannot find env.sh file. "
+    raise ValueError("Cannot find env.py file. "
                      "Have you accidentally removed it? "
                      "Have you run run-preset.py at least once?")
-check_call(['git', 'add', 'env.sh'])
+check_call(['git', 'add', 'env.py'])
 
 # Make sure we are in the root repo directory
 chdir(repodir)
