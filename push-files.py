@@ -25,6 +25,12 @@ for i in listdir(jitcachedir):
         copy(targetfile, targetdir)
         print("Copied `%s` to `%s`" % (targetfile, targetdir))
 
+# Copy env file
+envfile = path.join(repodir, 'env.sh')
+if not path.exists(envfile):
+    raise ValueError("Cannot find env.sh file. Have you accidentally removed it?")
+copy(envfile, targetdir)
+
 # Make sure we are in the root repo directory
 chdir(repodir)
 
