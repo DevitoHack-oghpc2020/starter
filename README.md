@@ -72,28 +72,6 @@ If one wants to:
 * Use a different backend compiler, for example `pgcc`; then set
   `DEVITO_ARCH=pgcc` and unset `DEVITO_PLATFORM`
 
-### Example: experimenting with OpenACC
-
-```
-unset DEVITO_PLATFORM
-export DEVITO_ARCH=pgcc
-python run-preset.py acoustic
-```
-
-Devito will provide the location of the generated files. You may use
-vim/nano/emacs/... to modify the code, for example adding
-
-* a new header files `#include "openacc.h"`, and
-* `#pragma acc kernels` to the parallel loops
-
-then rerun:
-
-```
-python run-preset.py acoustic
-```
-
-to test your changes.
-
 ## Step 4: Push your work
 To submit your work at the end of the hackathon, just run `python
 push-files.py`.  And that's it!
